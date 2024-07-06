@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Database Entry Dates - Lostwave Searching Tools</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/databaseEntryDates.js" defer></script>
+  </head>
+  <body>
+    <h1>Estimate Database Entry Dates</h1>
+    <a href="/">Back to Homepage</a>
+    <br />
+    <hr />
+    <input
+      type="text"
+      placeholder="Lowest work number..."
+      id="entryId"
+      style="width: 150px"
+    />
+    <select id="databaseName">
+      <optgroup label="Databases">
+        <option value="socan">SOCAN</option>
+        <option value="ascap">ASCAP</option>
+        <option value="bmi">BMI</option>
+        <option value="gema">GEMA</option>
+        <option value="cmrra">CMRRA</option>
+        <option value>* more coming soon</option>
+      </optgroup>
+    </select>
+    <button id="approximateDate">Estimate Date</button>
+    <br />
+    <p id="result">The result will be shown here.</p>
+  </body>
+</html>
