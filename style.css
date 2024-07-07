@@ -1,34 +1,45 @@
 * {
-    font-family: sans-serif;
-    text-align: center;
-  }
-  
-  h1, a, p, button, footer {
-    color: white;
-  }
-  
-  body {
-    padding-top: 10vh;
-    background: linear-gradient(to top, #5E819E, #344857);
-    background-size: 100vw 100vh;
-    background-repeat: no-repeat;
-  }
-  
-  button {
-    background-color: rgba(255, 255, 255, 0.6);
-  }
-  
-  button, input, select {
-    border: 3px solid whitesmoke;
-    border-radius: 3px;
-    padding: 15px;
-    margin: 5px;
-  }
-  
-  input, select {
-    color: rgb(30, 30, 30);
-  }
-  
-  footer {
-    margin-top: 40vh;
-  }
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h1,
+a,
+p,
+button,
+footer {
+  color: white;
+}
+
+body {
+  padding-top: 10vh;
+  background: linear-gradient(to top, #5E819E, #344857);
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+}
+
+button {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+button,
+input,
+select {
+  border: 3px solid whitesmoke;
+  border-radius: 3px;
+  padding: 15px;
+  margin: 5px;
+}
+
+input,
+select {
+  color: rgb(30, 30, 30);
+}
+
+footer {
+  margin-top: 40vh;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
