@@ -74,7 +74,7 @@ fetch("songDatabases.json").then(res => res.json()).then(json => {
           resultElem.innerHTML = `
         <strong>Approximate Date:</strong> ${dayToDate(database.baseTimestamp, result.approximateDate).toDateString()}<br />
         <strong>Likely Date Range:</strong> From ${dayToDate(database.baseTimestamp, result.lowDate).toDateString()} to ${dayToDate(database.baseTimestamp, result.highDate).toDateString()}</strong><br /><br />
-        <em>* Please note: Work numbers can vary greatly. Make sure you have chosen the lowest work number associated with this song.</em>`;
+        <em>* Please note: Work numbers can vary greatly. Occasionally, songs may have multiple entries. Please ensure you've entered the lowest work number for your song.</em>`;
         } else {
           alert(`An invalid work number has been entered. In most databases, entry IDs are only allowed to be numbers. Please try again.`);
         };
