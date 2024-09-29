@@ -1,35 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Database Entry Dates - Lostwave Searching Tools</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="databaseEntryDates.js" defer></script>
-  </head>
-  <body>
-    <h1>Estimate Database Entry Dates</h1>
-    <a href="/">Back to Homepage</a>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Database Entry Dates - Lostwave Tools</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="databaseEntryDates.js" defer></script>
+  <link rel="icon" href="lostwaveToolsLight.png" />
+  <meta name="title" content="Lostwave Tools - Database Entry Dates" />
+  <meta name="description" content="Estimate database entry dates with Lostwave Tools." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ehscripts.github.io/LostwaveTools" />
+  <meta property="og:title" content="Lostwave Tools - Database Entry Dates" />
+  <meta property="og:description" content="Estimate database entry dates with Lostwave Tools." />
+  <meta property="og:image" content="https://ehscripts.github.io/LostwaveTools/lostwaveToolsLightWithBackgroundSmall.jpeg" />
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ehscripts.github.io/LostwaveTools" />
+  <meta property="twitter:title" content="Lostwave Tools - Database Entry Dates" />
+  <meta property="twitter:description" content="Estimate database entry dates with Lostwave Tools." />
+  <meta property="twitter:image" content="https://ehscripts.github.io/LostwaveTools/lostwaveToolsLightWithBackgroundSmall.jpeg" />
+</head>
+
+<body>
+  <div id="heading">
+    <a href="/"><img src="lostwaveToolsLight.png" id="icon" /></a>
+    <h1 style="font-size: 25px;">Estimate Database Entry Dates</h1>
+    <!--<div id="rightAccountButtons">
+      <a href="account/login.html"><button>Log In</button></a><a href="account/register.html"><button>Sign
+          Up</button></a>
+    </div>-->
+  </div>
+  <!--<div id="centerAccountButtons">
+    <a href="account/login.html"><button>Log In</button></a><a href="account/register.html"><button>Sign Up</button></a>
+  </div>-->
+  <br />
+  <a href="/">Back to Homepage</a>
+  <br /><br />
+  <input type="text" placeholder="Lowest work number..." id="entryId" />
+  <br class="vertical" />
+  <select id="databaseName">
+    <optgroup label="Databases">
+      <option value="socan">🇨🇦 SOCAN</option>
+      <option value="ascap">🇺🇸 ASCAP</option>
+      <option value="bmi">🇺🇳 BMI</option>
+      <option value="gema">🇩🇪 GEMA</option>
+      <option value="cmrra">🇨🇦 CMRRA</option>
+      <option value="iswc">🇺🇳 ISWC</option>
+      <option value="sesac">🇺🇸 SESAC</option>
+      <option value="sacm">🇲🇽 SACM</option>
+      <option value="osa">🇵🇱 OSA</option>
+      <option value>* more coming soon</option>
+    </optgroup>
+  </select>
+  <br class="vertical" />
+  <button id="approximateDate">Estimate Date</button>
+  <br />
+  <div class="errorContainer" style="display: none;">
     <br />
-    <hr />
-    <input
-      type="text"
-      placeholder="Lowest work number..."
-      id="entryId"
-      style="width: 150px"
-    />
-    <select id="databaseName">
-      <optgroup label="Databases">
-        <option value="socan">SOCAN</option>
-        <option value="ascap">ASCAP</option>
-        <option value="bmi">BMI</option>
-        <option value="gema">GEMA</option>
-        <option value="cmrra">CMRRA</option>
-        <option value>* more coming soon</option>
-      </optgroup>
-    </select>
-    <button id="approximateDate">Estimate Date</button>
-    <br />
-    <p id="result">The result will be shown here.</p>
-  </body>
+    <div class="error"></div>
+  </div>
+  <p id="result" style="padding-left: 15px; padding-right: 15px;">The result will be shown here.</p>
+</body>
+
 </html>

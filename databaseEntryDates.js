@@ -1,13 +1,21 @@
+const errorContainer = document.getElementsByClassName("errorContainer")[0];
+const errorElem = document.getElementsByClassName("error")[0];
+
+const showError = errorText => {
+  errorContainer.style.display = "block";
+  errorElem.innerText = errorText;
+};
+
 let databases;
 
 fetch("songDatabases.json").then(res => res.json()).then(json => {
   databases = json;
 
-  for(const database in databases) {
+  for (const database in databases) {
     let total = 0;
     let numberOfBenchmarks = 0;
-    for(let benchmark in databases[database].benchmarks) {
-      if(benchmark == 0) { continue; };
+    for (let benchmark in databases[database].benchmarks) {
+      if (benchmark == 0) { continue; };
       benchmark = benchmark;
       numberOfBenchmarks++;
       total += (benchmark / databases[database].benchmarks[benchmark]);
@@ -29,7 +37,7 @@ fetch("songDatabases.json").then(res => res.json()).then(json => {
       };
     };
     let lowId, highId, lowDate, highDate;
-    if(surroundingIds) {
+    if (surroundingIds) {
       lowId = surroundingIds[0];
       highId = surroundingIds[1];
       lowDate = idBenchmarks[surroundingIds[0]];
@@ -56,17 +64,27 @@ fetch("songDatabases.json").then(res => res.json()).then(json => {
   const resultElem = document.getElementById("result");
 
   document.getElementById("approximateDate").addEventListener("click", function () {
+    errorContainer.style.display = "none";
     const dbName = dbSelect.value.toUpperCase();
+    let entryId;
     switch (dbName) {
       case "":
-        alert("You must select a database name first.");
+        showError("You must select a database name first.");
         break;
       case "SOCAN":
       case "ASCAP":
       case "BMI":
       case "GEMA":
       case "CMRRA":
-        const entryId = parseInt(dbName == "GEMA" ? entryIdInput.value.split("-")[0] : entryIdInput.value);
+      case "ISWC":
+      case "SESAC":
+      case "SACM":
+      case "OSA":
+        if(dbName == "ISWC") {
+          entryId = entryIdInput.value.replace("T", "").replaceAll(".", "").replaceAll("-", "");
+        } else {
+          entryId = parseInt(dbName == "GEMA" ? entryIdInput.value.split("-")[0] : entryIdInput.value);
+        };
         const database = databases[dbName];
         if (entryId) {
           const result = approximate1(database.benchmarks, entryId, database.baseTimestamp, database.averagePerDay);
@@ -76,7 +94,7 @@ fetch("songDatabases.json").then(res => res.json()).then(json => {
         <strong>Likely Date Range:</strong> From ${dayToDate(database.baseTimestamp, result.lowDate).toDateString()} to ${dayToDate(database.baseTimestamp, result.highDate).toDateString()}</strong><br /><br />
         <em>* Please note: Work numbers can vary greatly, and occasionally, songs may have multiple entries. Please ensure you've entered the lowest work number for your song.</em>`;
         } else {
-          alert(`An invalid work number has been entered. In most databases, entry IDs are only allowed to be numbers. Please try again.`);
+          showError(`An invalid work number has been entered. ${dbName == "ISWC" ? "The format for all ISWC identifiers is T-000.000.000-0" : "In most databases, entry IDs are only allowed to be numbers. Please try again."}`);
         };
         break;
     };

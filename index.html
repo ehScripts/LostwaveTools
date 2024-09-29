@@ -1,21 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lostwave Searching Tools</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home - Lostwave Tools</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="lostwaveToolsLight.png" />
+</head>
+
+<body>
+  <script src="https://kit.fontawesome.com/4a95a62479.js" crossorigin="anonymous"></script>
+  <!--
+  <script type="module" src="account/accountLoader.js"></script>
+  <script type="module" src="index.js" defer></script>
+-->
+  <div id="heading">
+    <a href="/"><img src="lostwaveToolsLight.png" id="icon" /></a>
     <h1>
       Lostwave Tools
     </h1>
+  </div>
+  <!--
+  <div class="loading"></div>
+  <div id="account" style="display: none;">
+    <i class="fa fa-user" id="userIcon" aria-hidden="true"></i>
+    <label id="username"></label>
+    <button id="userDropdownButton"><i class="fa-solid fa-caret-down"></i></button>
+  </div>
+  <div id="accountDropdown">
+    <div id="accountDropdownLinks">
+      <a href="account/dashboard.html"><button><i class="fa-solid fa-chart-simple"
+            class="invert"></i><label>Dashboard</label></button></a>
+      <a href="account/profile.html" id="myProfile"><button><i class="fa-solid fa-users" class="invert"></i><label>My
+            Profile</label></button></a>
+      <a href="account/settings.html"><button><i class="fa-solid fa-gear" class="invert"></i><label>Account
+            Settings</label></button></a>
+    </div>
+  </div>
+  <br id="separator1" style="display: none;" />
+  <div id="accountButtons" style="display: none;">
+    <a href="account/login.html"><button>Log In</button></a><a href="account/register.html"><button>Sign Up</button></a>
+  </div>
+-->
+  <br id="separator2" style="display: none;" />
+  <div id="features">
+    <h2>Features</h2>
+    <a href="databaseEntryDates.html"><button class="tool" style="font-size: 13.5px;"><i
+          class="fa-solid fa-calendar-days" class="invert"></i>&nbsp;&nbsp;<label>Database Entry
+          Dates</label></button></a>
+    <!--<a href="audioSearch.html"><button class="tool"><img src="waveform-lines.svg"
+          class="invert" />&nbsp;&nbsp;<label>Audio Search <em style="color: lightBlue;">[NEW]</em></label></button></a>
+    <a href="pages/index.html"><button class="tool"><i class="fa-solid fa-scroll"
+          class="invert"></i>&nbsp;&nbsp;<label>Pages <em style="color: lightBlue;">[NEW]</em></label></button></a>
+    <a href="external-tools/index.html"><button class="tool"><i class="fa-solid fa-arrow-up-right-from-square"
+          class="invert"></i>&nbsp;&nbsp;<label>External Tools</label></button></a>-->
+  </div>
+  <br />
+  <footer>
     <hr />
-    <a href="databaseEntryDates.html">Estimate Database Entry Date</a>
-    <br />
-    <footer>
-      <hr />
-      <small style="font-size: 12px;">made and maintained by ehScripts</small>
-    </footer>
-  </body>
+    <small>made and maintained by ehScripts</small>
+  </footer>
+</body>
+
 </html>

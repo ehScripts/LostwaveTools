@@ -4,29 +4,44 @@
 }
 
 h1,
-a,
 p,
 button,
-footer {
+footer,
+em,
+h2,
+strong,
+h3 {
   color: white;
 }
 
 body {
-  padding-top: 10vh;
-  background: linear-gradient(to top, #5E819E, #344857);
-  background-size: 100vw 100vh;
-  background-repeat: no-repeat;
+  background: url("granite.png"), linear-gradient(to top, #5E819E, #344857);
+  background-size: auto auto, 100% 100%;
+  background-repeat: repeat, no-repeat;
+  backdrop-filter: blur(6px);
+  height: 100vh;
+}
+
+body, html {
+  margin: 0 !important;
+  padding: 0 !important;
+  overscroll-behavior: none;
+  overflow-x: hidden;
 }
 
 button {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  transition: background-color 150ms;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 button,
 input,
-select {
-  border: 3px solid whitesmoke;
-  border-radius: 3px;
+select,
+textarea {
+  border-radius: 6px;
   padding: 15px;
   margin: 5px;
 }
@@ -34,12 +49,438 @@ select {
 input,
 select {
   color: rgb(30, 30, 30);
-}
-
-footer {
-  margin-top: 40vh;
+  border: 3px solid whitesmoke;
 }
 
 button:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.form, #features {
+  background-color: rgb(0, 0, 0, 0.2);
+  width: 280px;
+  margin-left: calc(50vw - 153px);
+  padding: 10px;
+  border-radius: 8px;
+  border: 3px solid rgb(0, 0, 0, 0.2);
+}
+
+#features {
+  padding-top: 0px !important;
+}
+
+hr {
+  border: 2px solid whitesmoke;
+  border-radius: 2px;
+  width: 100%;
+}
+
+hr.surround {
+  display: none;
+  margin-top: 0px;
+}
+
+a, a > strong {
+  color: rgb(210, 235, 255) !important;
+  transition: opacity 125ms;
+}
+
+a:hover, a > strong:hover {
+  opacity: 0.9;
+}
+
+#heading {
+  margin-bottom: 10px;
+}
+
+#heading, #thinHeading {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+  padding: 20px 20px 0px 20px;
+  border-bottom: 3px solid whitesmoke;
+}
+
+#thinHeading {
+  height: 50px;
+}
+
+#smallIcon {
+  width: 50px;
+  position: absolute;
+  left: calc(50vw - 25px);
+  top: 10px;
+}
+
+#smallAccountButtons > a {
+  position: absolute;
+  top: 7.5px;
+}
+
+#smallAccountButtons > a:nth-child(1) {
+  left: calc(50vw - 142.5px);
+}
+
+#smallAccountButtons > a:nth-child(2) {
+  right: calc(50vw - 142.5px);
+}
+
+#smallAccountButtons > a > button {
+  padding: 0px !important;
+  width: 85px;
+  height: 45px;
+}
+
+h1 {
+  margin: 0px 0px 20px 0px;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.6);
+}
+
+#features > a {
+  text-decoration: none;
+}
+
+.tool {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 4px solid rgba(0, 0, 0, 0.4) !important;
+  border-radius: 12px !important;
+  width: 270px;
+  height: 80px;
+  font-size: 14px;
+  transition: background-color 250ms, scale 250ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tool:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  scale: 1.025;
+}
+
+.tool > i {
+  font-size: 24px;
+}
+
+.tool > i, .tool > img {
+  margin-right: auto;
+}
+
+.tool > img {
+  width: 24px;
+}
+
+.tool > label {
+  position: absolute;
+  cursor: pointer;
+}
+
+#icon {
+  width: 100px;
+}
+
+#icon, #smallIcon {
+  filter: drop-shadow(0px 0px 24px black);
+  transition: scale 250ms, opacity 250ms;
+}
+
+#icon:hover, #smallIcon:hover {
+  opacity: 0.8;
+  scale: 1.05;
+}
+
+.vertical, .searchVertical {
+  display: none;
+}
+
+#entryId {
+  width: 139px;
+  margin-left: 7px;
+}
+
+#databaseName, #approximateDate {
+  width: 175px;
+}
+
+#entryId, #databaseName, #approximateDate,
+#searchArtist, #searchTitle, #searchButton {
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.4));
+}
+
+#rightAccountButtons {
+  position: absolute;
+  right: 25px;
+  top: 100px;
+}
+
+#centerAccountButtons {
+  display: none;
+}
+
+.error, .success {
+  width: 268px;
+  padding: 15px;
+  margin-bottom: 15px;
+  color: whitesmoke;
+  font-family: monospace;
+  border-radius: 3px;
+}
+
+.error {
+  background-color: rgba(255, 0, 0, 0.4);
+  border: 3px solid red;
+}
+
+.success {
+  background-color: rgba(0, 255, 0, 0.4);
+  border: 3px solid lightGreen;
+}
+
+body > .error, body > .success, .errorContainer {
+  margin-left: calc(50vw - 151px);
+  margin-bottom: 0px;
+}
+
+.loading, .loading::after {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.loading {
+  display: inline-block;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 0.4em solid rgba(255, 255, 255, 0.2);
+  border-right: 0.4em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 0.4em solid rgba(255, 255, 255, 0.2);
+  border-left: 0.4em solid #eee;
+  scale: 2;
+  margin: 30px;
+  animation-name: loading;
+  animation-duration: 1.1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  filter: drop-shadow(0px 0px 8px white);
+}
+
+.loadingAbsolute {
+  position: absolute;
+  left: calc(50vw - 42px);
+}
+
+@keyframes loading {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+#userDropdownButton {
+  padding: 0px;
+  width: 35px;
+  height: 35px;
+  float: right;
+  font-size: 20px;
+  transition: background-color 250ms, font-size 250ms;
+}
+
+#userDropdownButton > i {
+  transition: transform 250ms;
+}
+
+#userDropdownButton.open > i {
+  transform: rotate(180deg);
+}
+
+#userDropdownButton:hover {
+  font-size: 22px;
+}
+
+#account, #accountDropdown {
+  background-color: rgba(0, 128, 128, 0.5);
+  width: 180px;
+  margin-left: calc(50vw - 95.5px);
+  border-radius: 4px;
+  color: whitesmoke;
+  font-weight: bold;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  padding-left: 5px;
+}
+
+#accountDropdown {
+  width: 185px;
+  background-color: rgba(0, 255, 255, 0.3);
+  padding-left: 0px;
+  margin-top: 0px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  transition: max-height 250ms, opacity 250ms, margin-top 250ms, marign-bottom 250ms;
+  overflow: hidden;
+  max-height: 0px;
+  opacity: 0;
+}
+
+#accountDropdownLinks {
+  display: none;
+}
+
+#accountDropdown.open {
+  margin-top: 5px;
+  max-height: 114px;
+  opacity: 1;
+}
+
+#accountDropdownLinks > a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#accountDropdownLinks > a > button {
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0px 10px 0px 10px !important;
+  margin: 0px;
+  text-align: center;
+  width: 185px;
+  border-radius: 0px;
+  border: none;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+  transition: font-size 250ms, background-color 250ms;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#accountDropdownLinks > a > button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+#accountDropdownLinks > a > button > i {
+  margin-right: auto;
+}
+
+:root {
+  --dropdown-label-opacity: 0;
+  --dropdown-label-blur: 0px;
+}
+
+#accountDropdownLinks > a > button > label {
+  cursor: pointer;
+  position: absolute;
+  opacity: var(--dropdown-label-opacity);
+  filter: blur(var(--dropdown-label-blur));
+  transition: opacity 250ms, filter 250ms;
+}
+
+#accountDropdownLinks > a:last-child > button {
+  border: none;
+}
+
+.accountMoveable {
+  margin-bottom: 0px;
+}
+
+.accountMoveable, .accountDropdownMoveable {
+  float: right;
+  margin-right: 10px;
+}
+
+.accountDropdownMoveable.open {
+  margin-bottom: 6px;
+}
+
+#account > i {
+  text-align: center;
+}
+
+#username {
+  text-align: center;
+  font-family: monospace;
+  height: 45px;
+  line-height: 45px;
+  margin-left: 2px;
+}
+
+.invert {
+  filter: invert(1);
+}
+
+footer > small {
+  font-size: 12px;
+  font-family: monospace;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+}
+
+@media only screen and (max-width: 575px) {
+  .vertical {
+    display: block;
+  }
+  #entryId {
+    width: calc(95vw - 56px) !important;
+  }
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 1.25em;
+  width: 1.25em;
+  background: url(xmark-solid.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin-right: -5px;
+}
+
+.labelButton:hover {
+  background-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+#links {
+  color: whitesmoke;
+}
+
+.vl {
+  border-left: 6px solid whitesmoke;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  margin-top: 25px;
+  border-radius: 8px;
+}
+
+@media only screen and (max-width: 850px) {
+  #rightAccountButtons {
+    display: none;
+  }
+  #centerAccountButtons {
+    display: block;
+  }
+  .accountMoveable, .accountDropdownMoveable {
+    float: none;
+  }
+  hr.surround {
+    display: block;
+  }
+  .loadingAbsolute {
+    top: calc(50vh - 42px);
+    scale: 3;
+  }
+}
+
+@media only screen and (max-height: 725px) {
+  #icon {
+    width: 75px;
+  }
+  #heading > h1 {
+    font-size: 20px;
+  }
+  .tool {
+    height: 60px;
+  }
 }
