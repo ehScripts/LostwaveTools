@@ -76,15 +76,15 @@ fetch("songDatabases.json").then(res => res.json()).then(json => {
       case "BMI":
       case "GEMA":
       case "CMRRA":
-      case "ISWC":
+      //case "ISWC":
       case "SESAC":
       case "SACM":
       case "OSA":
-        if(dbName == "ISWC") {
+        /*if(dbName == "ISWC") {
           entryId = entryIdInput.value.replace("T", "").replaceAll(".", "").replaceAll("-", "");
-        } else {
-          entryId = parseInt(dbName == "GEMA" ? entryIdInput.value.split("-")[0] : entryIdInput.value);
-        };
+        } else {*/
+        entryId = parseInt(dbName == "GEMA" ? entryIdInput.value.split("-")[0] : entryIdInput.value);
+        //};
         const database = databases[dbName];
         if (entryId) {
           const result = approximate1(database.benchmarks, entryId, database.baseTimestamp, database.averagePerDay);
